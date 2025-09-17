@@ -4,23 +4,20 @@ const isProduction = process.env.NODE_ENV === 'production';
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 
 const nextConfig: NextConfig = {
-  // Enable static export for GitHub Pages
+  reactStrictMode: true,
+  
+  // Only apply GitHub Pages settings in production build with GitHub Actions
   ...(isProduction && isGitHubPages && {
     output: 'export',
     trailingSlash: true,
-    basePath: '/Ecommerce',
-    assetPrefix: '/Ecommerce/',
+    basePath: '/EcommerceWeb',
+    assetPrefix: '/EcommerceWeb/',
   }),
   
   // Image optimization settings
   images: {
     unoptimized: isProduction && isGitHubPages,
-  },
-
-  // Development settings
-  ...(!isProduction && {
-    reactStrictMode: true,
-  })
+  }
 };
 
 export default nextConfig;

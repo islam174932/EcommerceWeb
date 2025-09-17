@@ -22,7 +22,7 @@ export default function Home() {
     return (
       <>
         <Head>
-          <meta httpEquiv="refresh" content="0; url=/Ecommerce/home" />
+          <meta httpEquiv="refresh" content="0; url=/home" />
           <title>Elite Store - Redirecting...</title>
         </Head>
         <div style={{
